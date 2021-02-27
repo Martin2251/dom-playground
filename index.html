@@ -34,6 +34,10 @@ margin: 5px;
 
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 
 </style>
 
@@ -49,6 +53,9 @@ margin: 5px;
 <button id="btn-create">Create a block</button>
 <button id="btn-delete">delete the blocks</button>
 <button id="martin">My name is martin</button>
+<button id="trump">Donald Trump is the best president ever</button>
+<img src="https://kitt.lewagon.com/placeholder/users/Papillard"
+     id="boris" height="200" alt="Boris Paillard" />
 <div id="container">
 
 
@@ -110,6 +117,18 @@ const createButton = document.getElementById("btn-create");
   event.currentTarget.innerText = 'no your not';
   });
 
+    const president = document.getElementById("trump");
+ president.addEventListener('click', (event) => {
+  // Callback
+  event.currentTarget.innerText = 'fake news';
+  });
+
+
+  document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("img-circle");
+  });
+});
 
 
 </script>
