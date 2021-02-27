@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Playground</title>
+</head>
+
+<style>
+button {
+padding: 40px;
+font-size: 40px;
+margin: 5px;
+}
+
+.block{
+  padding: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  border:solid  skyblue;
+
+}
+
+.block:hover{
+  background-color: blueviolet;
+
+}
+
+#container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+
+</style>
+
+<body>
+  <div style="display: flex:justify-content: centre;align-items: centre;alight-height: 100vh;">
+  <button id="btn-increase">Increase</button>
+  <button id="btn-decrease">Decrease</button>
+
+  </div>
+  <div>
+<p id="counter">  0   </p>
+
+<button id="btn-create">Create a block</button>
+<button id="btn-delete">delete the blocks</button>
+<div id="container">
+
+
+</div>
+
+  </div>
+
+
+
+
+
+
+
+</body>
+
+<script>
+const counter = document.getElementById("counter")
+counter.innerText="0";
+
+document.getElementById("btn-increase").addEventListener("click",function (event) {
+  counter.innerText = parseInt(counter.innerText) + 1;
+})
+
+document.getElementById("btn-decrease").addEventListener("click",function (event) {
+  counter.innerText = parseInt(counter.innerText) - 1 ;
+
+})
+
+const createButton = document.getElementById("btn-create");
+  function createBlock(){
+    const block = document.createElement("div")
+    block.innerText = "I'am a block"
+    block.classList.add("block");
+
+    const container = document.getElementById("container");
+    container.appendChild(block)
+
+
+
+  }
+
+  createButton.addEventListener("click",createBlock)
+
+  function deleteBlock () {
+    //container.innerHTML="";
+    document.querySelectorAll(".block").forEach(node => node.remove())
+
+  }
+
+  const deleteButton = document.getElementById("btn-delete");
+
+  createButton.addEventListener("click", createBlock)
+  deleteButton.addEventListener("click", deleteBlock)
+
+
+</script>
+</html>
+
