@@ -48,6 +48,7 @@ margin: 5px;
 
 <button id="btn-create">Create a block</button>
 <button id="btn-delete">delete the blocks</button>
+<button id="martin">My name is martin</button>
 <div id="container">
 
 
@@ -101,6 +102,14 @@ const createButton = document.getElementById("btn-create");
 
   createButton.addEventListener("click", createBlock)
   deleteButton.addEventListener("click", deleteBlock)
+
+
+  const name = document.getElementById("martin");
+ name.addEventListener('click', (event) => {
+  // Callback
+  event.currentTarget.innerText = 'no your not';
+  });
+
 
 
 </script>
