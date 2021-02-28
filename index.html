@@ -57,6 +57,7 @@ margin: 5px;
 <img src="https://kitt.lewagon.com/placeholder/users/Papillard"
      id="boris" height="200" alt="Boris Paillard" />
 <div id="container">
+<button id="london">what is the population of london?</button>
 
 
 </div>
@@ -123,12 +124,18 @@ const createButton = document.getElementById("btn-create");
   event.currentTarget.innerText = 'fake news';
   });
 
+     const london = document.getElementById("london");
+ london.addEventListener('mouseover', (event) => {
+  // Callback
+  event.currentTarget.innerText = '8 million';
+  });
 
   document.querySelectorAll("img").forEach((img) => {
   img.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("img-circle");
   });
 });
+
 
 
 </script>
